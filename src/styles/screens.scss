@@ -1,0 +1,25 @@
+$small: 'not all and (min-width: 900px)';
+$medium: 'not all and (min-width: 0px)';
+$large: '(min-width: 900px)';
+
+$IE: 'all and (-ms-high-contrast: active), (-ms-high-contrast: none)';
+
+
+@media #{$small} {
+  .hide-sm {
+    display: none !important;
+  }
+}
+
+@media #{$medium} {
+  .hide-md {
+    display: none !important;
+  }
+}
+
+@media #{$large} {
+  .hide-lg {
+    display: none !important;
+  }
+}
+
