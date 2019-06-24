@@ -42,12 +42,12 @@ export default function BlogView({ blog, nextBlog, prevBlog }) {
       <div className="more-posts flex-row-wrap colored-links">
         {prevBlog && (
           <div className="flex-1">
-            <Link to={prevBlog.slug}>← {prevBlog.title}</Link>
+            <Link to={"/" + prevBlog.slug}>← {prevBlog.title}</Link>
           </div>
         )}
         {nextBlog && (
           <div className="flex-1">
-            <Link to={nextBlog.slug}>{nextBlog.title} →</Link>
+            <Link to={"/" + nextBlog.slug}>{nextBlog.title} →</Link>
           </div>
         )}
       </div>
@@ -84,6 +84,13 @@ const Wrapper = styled.div`
       margin-right: auto;
       margin-top: 2rem;
       margin-bottom: 2rem;
+      max-width: 37rem;
+    }
+    code {
+      font-size: 1.2rem;
+      background-color: #373c49;
+      border-radius: 3px;
+      padding: 0.2rem 0.4rem;
     }
   }
 `;
