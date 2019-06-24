@@ -84,7 +84,7 @@ const Wrapper = styled.div`
       margin-right: auto;
       margin-top: 2rem;
       margin-bottom: 2rem;
-      max-width: 37rem;
+      max-width: 90%;
     }
     code {
       font-size: 1.2rem;
