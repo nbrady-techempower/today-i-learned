@@ -84,6 +84,12 @@ and set up another `CNAME` record. It should look something like this:
 Allow a few minutes for DNS propagation and soon your S3 hosted website should
 be available over HTTPS!
 
+### Disclaimer
+
+As with all things AWS, be sure to check the pricing guides. Unless you plan on
+tons of traffic and lots of data coming through CloudFront, you're probably within
+the free tier, but I've been burned before so always double check.
+
 ### A Little Extra
 
 I've been using SSL and TLS interchangeably and, of course, they're not the same.
