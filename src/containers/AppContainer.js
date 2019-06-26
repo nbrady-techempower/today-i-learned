@@ -18,6 +18,15 @@ export default function AppContainer(props) {
       <Wrapper className="h-100 flex-col">
         <Router className="flex-1">
           <HomeView path="/" />
+          <BlogView
+            key={-1}
+            path="/light-theme"
+            blog={{
+              title: "A Light Theme?",
+              date: "Never",
+              slug: "light-theme"
+            }}
+          />
           {blogEntries.map((b, idx, entries) => (
             <BlogView
               key={idx}
