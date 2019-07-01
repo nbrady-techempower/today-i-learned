@@ -13,7 +13,7 @@ Anything I talk about here would be identified in those sites, but I'd like to t
 about the things that I believe should be habit, the same way you wouldn't type an `<img>`
 tag without thinking about it's `src` attribute.
 
-### Get the Picture?
+## Get the Picture?
 
 So, let's start with the `<img>` tag. From now on, when you think about `<img>` you should
 be thinking `<picture>` ([MDN Picture Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)).
@@ -85,8 +85,9 @@ larger than it needs to be. Check that off if your image isn't transparent.
 
 If you have control over the server your assets are originating from, ensure that you
 have an effective caching policy for each image type. This includes fonts, images,
-video, etc. If people are coming back to your page, this will make subsequent page loads
-much faster. [Here's more information](https://developers.google.com/web/tools/lighthouse/audits/cache-policy)
+videos, etc. If people are coming back to your page, this will make subsequent
+page loads much faster. 
+[Here's more information](https://developers.google.com/web/tools/lighthouse/audits/cache-policy)
 
 ## Deferring Images
 

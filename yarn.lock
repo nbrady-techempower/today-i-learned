@@ -1096,6 +1096,10 @@
     "@svgr/plugin-svgo" "^4.0.3"
     loader-utils "^1.1.0"
 
+"@techempower/react-governor@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@techempower/react-governor/-/react-governor-0.6.1.tgz#f421e68fc5c441eada68b563a6240d6119583f8c"
+
 "@types/babel__core@^7.1.0":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.1.tgz#ce9a9e5d92b7031421e1d0d74ae59f572ba48be6"

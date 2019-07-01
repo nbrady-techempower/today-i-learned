@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useLayoutEffect } from "react";
 import { Link } from "@reach/router";
-import marked from "marked";
+import marked from "../utils/marked";
 import styled from "styled-components";
 import config from "../config";
 import AuthorCallout from "../components/AuthorCallout";
 // import { useGlobalContext } from "../providers/GlobalContextProvider";
 
-import hljs from "highlight.js";
 import "../styles/highlight.scss";
 
 const html = document.querySelector("html");
@@ -15,40 +14,6 @@ const getReaderPerc = () => {
   const currHeight = window.pageYOffset + html.clientHeight;
   return Math.round((currHeight / totalHeight) * 100);
 };
-
-// Customize some markdown stuff
-const renderer = new marked.Renderer();
-
-renderer.image = function(href, title, text) {
-  let webpSrc, pngFound, jpegFound;
-  if (href.includes(".png")) {
-    pngFound = true;
-    webpSrc = href.replace(".png", "") + ".webp";
-  }
-  if (href.includes(".jpeg")) {
-    jpegFound = true;
-    webpSrc = href.replace(".jpeg", "") + ".webp";
-  }
-  if (!title) title = text;
-  return `
-    <picture>
-      ${webpSrc && `<source srcset="${webpSrc}" type="image/webp">`}
-      ${pngFound && `<source srcset="${href}" type="image/png">`}
-      ${jpegFound && `<source srcset="${href}" type="image/jpeg">`}
-      <img src="${href}" title="${title}" alt="${text}">
-    </picture>
-  `;
-};
-
-marked.setOptions({
-  renderer,
-  highlight: function(code) {
-    return hljs.highlightAuto(code).value;
-  },
-  image: function() {
-    return "";
-  }
-});
 
 export default function BlogView({ blog, nextBlog, prevBlog }) {
   // const context = useGlobalContext();
@@ -170,11 +135,7 @@ const Wrapper = styled.div`
       word-wrap: normal;
       line-height: 1.5;
       margin-bottom: 0;
-      -moz-tab-size: 4;
-      -o-tab-size: 4;
       tab-size: 4;
-      -webkit-hyphens: none;
-      -ms-hyphens: none;
       hyphens: none;
       overflow: auto;
     }

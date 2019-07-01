@@ -28,3 +28,8 @@ Build for production:
 ```bash
 yarn build
 ```
+
+## Custom Markdown
+
+Any `.png` and `.jpeg` images will produce a `<picture>` tag in the html
+output and include a `srcset` attribute for that image's `.webp` counterpart.

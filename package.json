@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "@techempower/react-governor": "^0.6.1",
     "highlight.js": "^9.15.8",
     "marked": "^0.6.2",
     "node-sass": "^4.12.0",
