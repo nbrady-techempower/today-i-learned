@@ -11,7 +11,7 @@ writing them down. I don't consider myself a *subject matter expert* at any
 one thing, but there are lots of things in my line of work I do enjoy, much to
 the distress of some around me.
 
-![I love JavaScript and I'm not sorry](/assets/images/ilovejs.png)
+![I love JavaScript and I'm not sorry](/assets/blogs/i-did-see-you/ilovejs.png)
 
 If we've talked tech at all, you know I'm a big fan of [React](https://reactjs.org/).
 I don't think I really enjoyed frontend web development until React came along.

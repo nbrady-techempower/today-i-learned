@@ -1,5 +1,12 @@
 const entries = [
   {
+    title: "Don't Overlook Simple Image Optimizations",
+    date: "June 28th, 2019",
+    slug: "simple-img-optimizations",
+    preview:
+      "Make these simple image optimizations habit, not a refactoring afterthought."
+  },
+  {
     title: "AWS S3 Website with HTTPS",
     date: "June 23, 2019",
     preview: "Simple setup to serve your static site over https.",

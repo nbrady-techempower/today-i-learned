@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import { Link } from "@reach/router";
 import marked from "marked";
 import styled from "styled-components";
@@ -6,21 +6,43 @@ import config from "../config";
 import AuthorCallout from "../components/AuthorCallout";
 // import { useGlobalContext } from "../providers/GlobalContextProvider";
 
+const html = document.querySelector("html");
+const getReaderPerc = () => {
+  const totalHeight = html.scrollHeight;
+  const currHeight = window.pageYOffset + html.clientHeight;
+  return Math.round((currHeight / totalHeight) * 100);
+};
+
 export default function BlogView({ blog, nextBlog, prevBlog }) {
   // const context = useGlobalContext();
   const [text, setText] = useState();
+  const [readerPerc, setReaderPerc] = useState(0);
 
   useEffect(() => {
     async function getBlog() {
       let data = await fetch(`/assets/blogs/${blog.slug}/index.md`);
       setText(await data.text());
+      // let the DOM paint what we fetched. Doing this right away isn't
+      // enough time to set the readPerc in the right spot. I've tried
+      // doing a MutationObserver, but it has the same problem.
+      setTimeout(() => setReaderPerc(getReaderPerc()), 100);
     }
 
     getBlog();
   }, [blog.slug]);
 
+  useLayoutEffect(() => {
+    const onScroll = () => setReaderPerc(getReaderPerc());
+    window.addEventListener("scroll", onScroll, false);
+
+    return function() {
+      window.removeEventListener("scroll", onScroll, false);
+    };
+  }, []);
+
   return (
     <Wrapper>
+      <ReaderBar readerPerc={readerPerc} />
       <div className="blog-title title-font">
         <Link to={"/"}>{config.blogTitle}</Link>
       </div>
@@ -93,4 +115,14 @@ const Wrapper = styled.div`
       padding: 0.2rem 0.4rem;
     }
   }
+`;
+
+const ReaderBar = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  width: ${(props) => props.readerPerc}%;
+  background: #d47ee9;
 `;
