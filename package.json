@@ -6,7 +6,7 @@
     "@reach/router": "^1.2.1",
     "@techempower/react-governor": "^0.6.1",
     "highlight.js": "^9.15.8",
-    "marked": "^0.6.2",
+    "marked": "^0.7.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
