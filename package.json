@@ -7,7 +7,7 @@
     "@techempower/react-governor": "^0.6.1",
     "highlight.js": "^9.15.8",
     "marked": "^0.6.2",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
