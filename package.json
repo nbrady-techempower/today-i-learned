@@ -5,7 +5,7 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "@techempower/react-governor": "^0.6.1",
-    "highlight.js": "^9.15.8",
+    "highlight.js": "^10.4.1",
     "marked": "^0.6.2",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
